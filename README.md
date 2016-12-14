@@ -1,6 +1,6 @@
-# Nginx-jupyter
+# Jupyter
 
-This example will show how to run a jupyter notebook server, from a container, either using files inside the container...
+This example will show how to run a jupyter notebook server with nginx, from a container, either using files inside the container...
 
 - perhaps you ran an analysis when you created the container, and want to serve the notebook as a result) or
 - perhaps you want this to be like a working container, to store a particular version of your software to use on local files
