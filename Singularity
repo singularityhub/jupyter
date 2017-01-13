@@ -1,4 +1,4 @@
-Bootstrap: docker
+BootStrap: docker
 From: continuumio/anaconda3
 
 %runscript
@@ -11,7 +11,6 @@ From: continuumio/anaconda3
 
      # Install jupyter notebook
      /opt/conda/bin/conda install jupyter -y --quiet 
-     mkdir /opt/notebooks 
+     mkdir /opt/notebooks
      apt-get autoremove -y
      apt-get clean
-     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
