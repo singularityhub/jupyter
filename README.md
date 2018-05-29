@@ -41,3 +41,7 @@ You can also map to a folder on your local machine, if you don't want to save th
 and here I am sitting in my local directory, but the entire software and depdencies are provided by my container. STILL really cool.
 
 ![local.png](local.png)
+## Note on port forwarding
+If you are running Singularity in Windows through vagrant. You will need to configure port fowarding in the Vagrantfile that you use to set up the Singularity container as well. 
+As an example, you should add a line that might look like this.
+`config.vm.network "forwarded_port", guest: 8888, host: 8888, host_ip: "127.0.0.1"`
