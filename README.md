@@ -1,6 +1,6 @@
 # Jupyter
 
-This example will show how to run a jupyter notebook server with nginx, from a container.
+This example will show how to run a jupyter notebook server with nginx, from a container (singularity container in this case).
 
 - perhaps you ran an analysis when you created the container, and want to serve the notebook as a result) or
 - perhaps you want this to be like a working container, to store a particular version of your software to use on local files
@@ -13,8 +13,8 @@ If you haven't installed singularity, do that with [these instructions](http://s
 
 Let's now create a jupyter notebook!
 
-      sudo singularity create --size 4000 jupyter.img
-      sudo singularity bootstrap jupyter.img Singularity
+      sudo singularity image.create --size 4000 jupyter.img
+      sudo singularity build jupyter.img Singularity
 
 Then to run our container, since we need to write files to `/opt/notebooks` inside the container, we must use sudo and add the `--writable` command:
 
