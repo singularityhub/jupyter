@@ -12,9 +12,9 @@ If you haven't installed singularity, do that with [these instructions](http://s
 
 
 Let's now create a jupyter notebook!
+First, we will create the writable container image in a _writable_ *ext3* file system, instead of the *squashfs* which only allows _read-only_. [read more](http://singularity.lbl.gov/docs-build-container)
 
-      sudo singularity image.create --size 4000 jupyter.img
-      sudo singularity build jupyter.img Singularity
+     sudo singularity build --writable jupyter.img Singularity
 
 Then to run our container, since we need to write files to `/opt/notebooks` inside the container, we must use sudo and add the `--writable` command:
 
