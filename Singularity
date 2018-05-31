@@ -5,7 +5,7 @@ From: continuumio/anaconda3
 
      echo "Starting notebook..."
      echo "Open browser to localhost:8888"
-     exec /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser
+     exec /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --allow-root --port=8888 --no-browser
 
 %post
 
