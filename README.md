@@ -1,6 +1,6 @@
 # Jupyter
 
-This example will show how to run a jupyter notebook server with nginx, from a container.
+This example will show how to run a jupyter notebook server with nginx, from a container (singularity container in this case).
 
 - perhaps you ran an analysis when you created the container, and want to serve the notebook as a result) or
 - perhaps you want this to be like a working container, to store a particular version of your software to use on local files
@@ -13,6 +13,7 @@ cd jupyter
 ```
 
 Let's now create a jupyter notebook!
+First, we will create the writable container image in a _writable_ *ext3* file system, instead of the *squashfs* which only allows _read-only_. [read more](http://singularity.lbl.gov/docs-build-container)
 
 ```bash
 $ sudo singularity build --sandbox jupyter-box Singularity
@@ -56,3 +57,7 @@ sudo singularity run -B $PWD:/opt/notebooks --writable jupyter-box
 and here I am sitting in my local directory, but the entire software and depdencies are provided by my container. STILL really cool.
 
 ![local.png](local.png)
+## Note on port forwarding
+If you are running Singularity in Windows through vagrant. You will need to configure port fowarding in the Vagrantfile that you use to set up the Singularity container as well. 
+As an example, you should add a line that might look like this.
+`config.vm.network "forwarded_port", guest: 8888, host: 8888, host_ip: "127.0.0.1"`
