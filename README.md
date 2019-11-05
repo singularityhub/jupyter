@@ -61,3 +61,17 @@ and here I am sitting in my local directory, but the entire software and depdenc
 If you are running Singularity in Windows through vagrant. You will need to configure port fowarding in the Vagrantfile that you use to set up the Singularity container as well. 
 As an example, you should add a line that might look like this.
 `config.vm.network "forwarded_port", guest: 8888, host: 8888, host_ip: "127.0.0.1"`
+
+This `cifs` branch has support for mounting a 'windows' fileshare from within the container, so that you can work with such shared files from within jupyter as if they are within the image.
+
+You'll want to edit the Singularity file to change the file server's name and share name, as well as the credentials for logging into it.
+It's not a bad idea to make a new git branch to keep those changes in, too:
+
+```bash
+git checkout -b private
+git add Singularity
+git commit -m 'never merge -- contains share credentials'
+```
+
+You can later do `git pull --rebase origin cifs` if you want to keep things updated without losing your private changes. 
+Be aware that to get new features, you may need to delete and rebuild your singularity image -- so backup your work outside of the image first.
