@@ -5,6 +5,12 @@ This example will show how to run a jupyter notebook server with nginx, from a c
 - perhaps you ran an analysis when you created the container, and want to serve the notebook as a result) or
 - perhaps you want this to be like a working container, to store a particular version of your software to use on local files
 
+## Branches
+
+ - [Windows Filesystem Support](https://github.com/singularityhub/jupyter/tree/cifs) A basic example for Windows Filesystem Support is on this cifs branch.
+
+## Getting Started
+
 If you haven't installed singularity, do that with [these instructions](http://singularity.lbl.gov/install-linux). Then Download the repo if you haven't already:
 
 ```bash
