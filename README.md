@@ -20,9 +20,11 @@ $ sudo singularity build --sandbox jupyter-box Singularity
 ```
 
 Then to run our container, since we need to write files to `/opt/notebooks` inside the container, we must use sudo and add the `--writable` command:
+This `cifs` branch has support for mounting a 'windows' fileshare from within the container, so that you can work with such shared files from within jupyter as if they are within the image.
+You will need to replace `server sharename shareuser sharepassword` with your own details so that `//server/sharename` will turn up as `./share` in jupyter.
 
 ```bash
-$ sudo singularity run --writable jupyter-box
+$ sudo singularity run --writable jupyter-box server sharename shareuser sharepassword
 ```
 
 When we open the browser, we see our server! Cool!
