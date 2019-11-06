@@ -3,8 +3,12 @@ From: continuumio/anaconda3
 
 %runscript
 
-     echo "Mounting shared drive..."
-     /sbin/mount.cifs //server/share /opt/notebooks/share -o user=shareusername,password=sharepassword
+     server="${1}"
+     share="${2}"
+     shareuser="${3}"
+     sharepw="${4}"
+     echo "Mounting shared drive //${server}/${share} with username ${shareuser}"
+     /sbin/mount.cifs //${server}/${share} /opt/notebooks/share -o user=${shareuser},password=${sharepw}
      echo "Starting notebook..."
      echo "Open browser to localhost:8888"
      exec /opt/conda/bin/jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888 --no-browser --allow-root
