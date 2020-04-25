@@ -5,6 +5,8 @@ This example will show how to run a jupyter notebook server with nginx, from a c
 - perhaps you ran an analysis when you created the container, and want to serve the notebook as a result) or
 - perhaps you want this to be like a working container, to store a particular version of your software to use on local files
 
+If you are interested in more proper container orchestration with [singularity-compose](https://singularityhub.github.io/singularity-compose/), see the [singularity-compose jupyter example](https://github.com/singularityhub/singularity-compose-examples/tree/master/jupyter-simple) that can more easily handle adding other containers as services, volumes, etc.
+
 ## Branches
 
  - [Windows Filesystem Support](https://github.com/singularityhub/jupyter/tree/cifs) A basic example for Windows Filesystem Support is on this cifs branch.
