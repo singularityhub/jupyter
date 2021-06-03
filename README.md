@@ -13,7 +13,7 @@ If you are interested in more proper container orchestration with [singularity-c
 
 ## Getting Started
 
-If you haven't installed singularity, do that with [these instructions](http://singularity.lbl.gov/install-linux). Then Download the repo if you haven't already:
+If you haven't installed singularity, do that with [these instructions](http://singularity.lbl.gov/install-linux). Then download the repo if you haven't already:
 
 ```bash
 git clone https://www.github.com/singularityhub/jupyter
@@ -66,6 +66,6 @@ and here I am sitting in my local directory, but the entire software and depdenc
 
 ![local.png](local.png)
 ## Note on port forwarding
-If you are running Singularity in Windows through vagrant. You will need to configure port fowarding in the Vagrantfile that you use to set up the Singularity container as well. 
+If you are running Singularity in Windows through vagrant, you will need to configure port forwarding in the Vagrantfile that you use to set up the Singularity container as well. 
 As an example, you should add a line that might look like this.
 `config.vm.network "forwarded_port", guest: 8888, host: 8888, host_ip: "127.0.0.1"`
